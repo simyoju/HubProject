@@ -8,7 +8,8 @@ target 'HubProject' do
   # Pods for HubProject
   pod 'SnapKit', '~> 5.6.0'
   pod 'Then'  
-
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
 
 
   target 'HubProjectTests' do
