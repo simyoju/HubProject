@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class EnterPasswordViewController: TwoTextFieldViewController {
     // MARK: - Properties
     var signUpEamil: String?
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupAttribute()
         setupDelegate()
+        setupBind()
     }
     
     func setupAttribute(){
@@ -24,6 +28,7 @@ class EnterPasswordViewController: TwoTextFieldViewController {
         guard let email = self.signUpEamil else { return }
         upTextField.text = email
         
+        bottomButton.setTitle("회원가입", for: .normal)
     }
     
     func setupDelegate(){
@@ -32,10 +37,27 @@ class EnterPasswordViewController: TwoTextFieldViewController {
     }
 }
 
+extension EnterPasswordViewController{
+    func setupBind(){
+        bottomButton.rx.tap
+            .bind {
+                self.moveToNext()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func moveToNext(){
+        let nextVC = WelcomeToHubViewController()
+        guard let email = self.signUpEamil else { return }
+        nextVC.signUpEamil = email
+        self.navigationController?.pushViewController(nextVC, animated: false)
+    }
+}
+
 extension EnterPasswordViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return false }
-//        if !text.isEmpty { moveToNext() }
+        if !text.isEmpty { moveToNext() }
         return true
     }
     
