@@ -31,6 +31,8 @@ class VerificationCodeViewController : OneTextFieldViewController {
     func setupAttribute(){
         mainTextField.placeholder = "이메일로 발송된 인증 번호를 입력해주세요."
         mainTextField.keyboardType = .numberPad
+        
+        bottomButton.setTitle("다음", for: .normal)
     }
     
     func setupDelegate(){
