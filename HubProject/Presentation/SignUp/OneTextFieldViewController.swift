@@ -16,6 +16,8 @@ class OneTextFieldViewController: UIViewController {
     }
     
     let mainTextField = UITextField().then {
+        $0.addLeftPadding()
+        
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor(named: "focus-out")?.cgColor
         

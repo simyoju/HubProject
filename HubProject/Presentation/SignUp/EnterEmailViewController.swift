@@ -6,23 +6,38 @@
 //
 
 import UIKit
-import SnapKit
-import Then
+import RxSwift
+import RxCocoa
 
 class EnterEmailViewController: OneTextFieldViewController {
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupAttribute()
         setupDelegate()
+        setupBind()
     }
     
     func setupAttribute(){
-        mainTextField.placeholder = "    이메일을 입력해주세요"
+        mainTextField.placeholder = "이메일을 입력해주세요"
     }
     
     func setupDelegate(){
         mainTextField.delegate = self
+    }
+}
+
+extension EnterEmailViewController {
+    func setupBind(){
+        bottomButton.rx.tap
+            .bind {
+                let nextVC = VerificationCodeViewController()
+                self.navigationController?.pushViewController(nextVC, animated: false)
+            }
+            .disposed(by: disposeBag)
     }
 }
 
