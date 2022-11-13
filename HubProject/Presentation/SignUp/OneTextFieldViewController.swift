@@ -23,10 +23,11 @@ class OneTextFieldViewController: UIViewController {
         
 //        $0.placeholder = "    이메일을 입력해주세요"
         
+        $0.autocapitalizationType = .none
         $0.keyboardType = .emailAddress
     }
     
-    let startButton = UIButton().then {
+    let bottomButton = UIButton().then {
         $0.setTitle("확인", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = UIColor(named: "main")
@@ -42,6 +43,14 @@ class OneTextFieldViewController: UIViewController {
         
         setView()
         setLayout()
+        
+        mainTextField.inputAccessoryView = bottomButton
+//        bottomButton.addTarget(self, action: #selector(bottomButtonClicekd), for: .touchUpInside)
+    }
+    
+    @objc
+    func bottomButtonClicekd(_ sender: UIButton){
+        
     }
 }
 
@@ -50,7 +59,7 @@ extension OneTextFieldViewController {
         [
             logoImageView,
             mainTextField,
-            startButton
+            bottomButton
         ].forEach{
             view.addSubview($0)
         }
@@ -78,7 +87,7 @@ extension OneTextFieldViewController {
             $0.height.equalTo(44)
         }
         
-        startButton.snp.makeConstraints{
+        bottomButton.snp.makeConstraints{
             $0.top.equalTo(mainTextField.snp.bottom)
                 .offset(80)
             $0.centerX.equalToSuperview()
