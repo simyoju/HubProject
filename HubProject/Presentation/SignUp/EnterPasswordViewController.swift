@@ -5,7 +5,7 @@
 //  Created by 심효주 on 2022/11/13.
 //
 
-import Foundation
+import UIKit
 
 class EnterPasswordViewController: TwoTextFieldViewController {
     // MARK: - Properties
@@ -27,6 +27,23 @@ class EnterPasswordViewController: TwoTextFieldViewController {
     }
     
     func setupDelegate(){
-//        mainTextField.delegate = self
+        upTextField.delegate = self
+        downTextField.delegate = self
+    }
+}
+
+extension EnterPasswordViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return false }
+//        if !text.isEmpty { moveToNext() }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.focusInTextField(textField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.focusOutTextField(textField)
     }
 }
