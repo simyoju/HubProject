@@ -11,7 +11,7 @@ import RxCocoa
 
 class EnterEmailViewController: OneTextFieldViewController {
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +32,29 @@ class EnterEmailViewController: OneTextFieldViewController {
 
 extension EnterEmailViewController {
     func setupBind(){
+        setupTap()
+    }
+    
+    func setupTap(){
         bottomButton.rx.tap
             .bind {
-                let nextVC = VerificationCodeViewController()
-                self.navigationController?.pushViewController(nextVC, animated: false)
+                self.moveToNext()
             }
             .disposed(by: disposeBag)
+    }
+    
+    func moveToNext(){
+        let nextVC = VerificationCodeViewController()
+        guard let email = self.mainTextField.text else { return }
+        nextVC.signUpEamil = email
+        self.navigationController?.pushViewController(nextVC, animated: false)
     }
 }
 
 extension EnterEmailViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        guard let text = textField.text else { return false }
+        if !text.isEmpty { moveToNext() }
         return true
     }
     
