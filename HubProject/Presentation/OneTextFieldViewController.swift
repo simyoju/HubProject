@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 class OneTextFieldViewController: UIViewController {
-    // MARK: - UI components
+    // MARK: - UI Components
     let logoImageView = UIImageView().then {
         $0.image = UIImage(named: "HubLogo")
     }
@@ -19,7 +19,7 @@ class OneTextFieldViewController: UIViewController {
         $0.addLeftPadding()
         
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor(named: "focus-out")?.cgColor
+        $0.layer.borderColor = UIColor(named: "HubGrey04")?.cgColor
         
         $0.layer.cornerRadius = 14
         
@@ -32,27 +32,28 @@ class OneTextFieldViewController: UIViewController {
     let bottomButton = UIButton().then {
         $0.setTitle("확인", for: .normal)
         $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        
         $0.backgroundColor = UIColor(named: "main")
         $0.layer.cornerRadius = 16
     }
     
-    // MARK: - view lifeCycles
+    // MARK: - View LifeCycles
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainTextField.becomeFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        mainTextField.becomeFirstResponder()
+//        mainTextField.becomeFirstResponder()
         
         setView()
         setLayout()
         
         mainTextField.inputAccessoryView = bottomButton
-//        bottomButton.addTarget(self, action: #selector(bottomButtonClicekd), for: .touchUpInside)
-    }
-    
-    @objc
-    func bottomButtonClicekd(_ sender: UIButton){
-        
     }
 }
 
@@ -102,10 +103,10 @@ extension OneTextFieldViewController {
 
 extension OneTextFieldViewController {
     func focusInTextField(){
-        mainTextField.layer.borderColor = UIColor(named: "focus-in")?.cgColor
+        mainTextField.layer.borderColor = UIColor(named: "HubPrimary")?.cgColor
     }
     
     func focusOutTextField(){
-        mainTextField.layer.borderColor = UIColor(named: "focus-out")?.cgColor
+        mainTextField.layer.borderColor = UIColor(named: "HubGrey04")?.cgColor
     }
 }

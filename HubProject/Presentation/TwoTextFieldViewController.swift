@@ -19,7 +19,7 @@ class TwoTextFieldViewController: UIViewController {
         $0.addLeftPadding()
         
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor(named: "focus-out")?.cgColor
+        $0.layer.borderColor = UIColor(named: "HubGrey04")?.cgColor
         
         $0.layer.cornerRadius = 14
         
@@ -31,7 +31,7 @@ class TwoTextFieldViewController: UIViewController {
         $0.addLeftPadding()
         
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor(named: "focus-out")?.cgColor
+        $0.layer.borderColor = UIColor(named: "HubGrey04")?.cgColor
         
         $0.layer.cornerRadius = 14
         
@@ -42,6 +42,9 @@ class TwoTextFieldViewController: UIViewController {
     let bottomButton = UIButton().then {
         $0.setTitle("확인", for: .normal)
         $0.setTitleColor(.white, for: .normal)
+        
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        
         $0.backgroundColor = UIColor(named: "main")
         $0.layer.cornerRadius = 16
     }
@@ -51,7 +54,7 @@ class TwoTextFieldViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        upTextField.becomeFirstResponder()
+        downTextField.becomeFirstResponder()
         
         setView()
         setLayout()
@@ -114,10 +117,10 @@ extension TwoTextFieldViewController {
 
 extension TwoTextFieldViewController {
     func focusInTextField(_ textField: UITextField){
-        textField.layer.borderColor = UIColor(named: "focus-in")?.cgColor
+        textField.layer.borderColor = UIColor(named: "HubPrimary")?.cgColor
     }
     
     func focusOutTextField(_ textField: UITextField){
-        textField.layer.borderColor = UIColor(named: "focus-out")?.cgColor
+        textField.layer.borderColor = UIColor(named: "HubGrey04")?.cgColor
     }
 }
