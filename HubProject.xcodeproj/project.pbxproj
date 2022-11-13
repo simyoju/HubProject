@@ -14,6 +14,7 @@
 		CF90945B2920B8C800DB0456 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90945A2920B8C800DB0456 /* UITextField+Extension.swift */; };
 		CF90945D2920BA3C00DB0456 /* TwoTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90945C2920BA3C00DB0456 /* TwoTextFieldViewController.swift */; };
 		CF90945F2920BBCC00DB0456 /* EnterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90945E2920BBCC00DB0456 /* EnterPasswordViewController.swift */; };
+		CF9094612920C39E00DB0456 /* WelcomeToHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9094602920C39E00DB0456 /* WelcomeToHubViewController.swift */; };
 		CFBFFAFB28FA83C80008F7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFFAFA28FA83C80008F7EE /* AppDelegate.swift */; };
 		CFBFFAFD28FA83C80008F7EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFFAFC28FA83C80008F7EE /* SceneDelegate.swift */; };
 		CFBFFAFF28FA83C80008F7EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFFAFE28FA83C80008F7EE /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		CF90945A2920B8C800DB0456 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		CF90945C2920BA3C00DB0456 /* TwoTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTextFieldViewController.swift; sourceTree = "<group>"; };
 		CF90945E2920BBCC00DB0456 /* EnterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPasswordViewController.swift; sourceTree = "<group>"; };
+		CF9094602920C39E00DB0456 /* WelcomeToHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToHubViewController.swift; sourceTree = "<group>"; };
 		CFBFFAF728FA83C80008F7EE /* HubProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBFFAFA28FA83C80008F7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFBFFAFC28FA83C80008F7EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				CFD6BD8A290E60AC00BA1ABD /* EnterEmailViewController.swift */,
 				CF80F1B429178D9E00AAFA00 /* VerificationCodeViewController.swift */,
 				CF90945E2920BBCC00DB0456 /* EnterPasswordViewController.swift */,
+				CF9094602920C39E00DB0456 /* WelcomeToHubViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				CFBFFAFF28FA83C80008F7EE /* ViewController.swift in Sources */,
 				CF90945D2920BA3C00DB0456 /* TwoTextFieldViewController.swift in Sources */,
 				CFBFFAFB28FA83C80008F7EE /* AppDelegate.swift in Sources */,
+				CF9094612920C39E00DB0456 /* WelcomeToHubViewController.swift in Sources */,
 				CFD6BD8B290E60AC00BA1ABD /* EnterEmailViewController.swift in Sources */,
 				CFBFFAFD28FA83C80008F7EE /* SceneDelegate.swift in Sources */,
 				CF80F1B329178AA100AAFA00 /* OneTextFieldViewController.swift in Sources */,
